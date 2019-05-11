@@ -15,30 +15,28 @@ namespace StudentOrganizationControlLibrary
         public CardControl()
         {
             InitializeComponent();
-            
         }
         public CardControl(string heading, string description)
         {
             InitializeComponent();
 
+            headerLabel.Text = SubStringShortner(heading, headerLabel.Font, 126, 35);
+            descriptionLabel.Text = SubStringShortner(description, descriptionLabel.Font, 294, 50);
+        }
+
+        private string SubStringShortner(string text, Font fontSize, int maxWidth, int charLength)
+        {
+            string resultString = text;
             Graphics g = CreateGraphics();
-            SizeF size = g.MeasureString(heading, headerLabel.Font);
-            
-            if (size.Width > 115)
-            {
-                heading = heading.Substring(0, 35);
-                heading = string.Concat(heading, "...");
-            }
-            headerLabel.Text = heading;
+            SizeF size = g.MeasureString(text, fontSize);
 
-            size = g.MeasureString(description, descriptionLabel.Font);
-
-            if (size.Width > 294)
+            if (size.Width > maxWidth)
             {
-                description = description.Substring(0, 50);
-                description = string.Concat(description, "...");
+                resultString = text.Substring(0, charLength);
+                resultString = string.Concat(resultString, "...");
             }
-            descriptionLabel.Text = description;
+
+            return resultString;
         }
     }
 }
