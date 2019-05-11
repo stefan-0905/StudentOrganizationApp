@@ -34,7 +34,11 @@
             this.coursesButton = new System.Windows.Forms.Button();
             this.announcementsButton = new System.Windows.Forms.Button();
             this.dashboardButton = new System.Windows.Forms.Button();
+            this.dashboardPanel = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.dashboardPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -131,11 +135,42 @@
             this.dashboardButton.MouseEnter += new System.EventHandler(this.NavigationButton_MouseEnter);
             this.dashboardButton.MouseLeave += new System.EventHandler(this.NavigationButton_MouseLeave);
             // 
+            // dashboardPanel
+            // 
+            this.dashboardPanel.Controls.Add(this.titleLabel);
+            this.dashboardPanel.Controls.Add(this.flowLayoutPanel1);
+            this.dashboardPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dashboardPanel.Location = new System.Drawing.Point(200, 0);
+            this.dashboardPanel.Name = "dashboardPanel";
+            this.dashboardPanel.Size = new System.Drawing.Size(644, 540);
+            this.dashboardPanel.TabIndex = 1;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 44);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(596, 225);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Enabled = false;
+            this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.ForeColor = System.Drawing.Color.Gold;
+            this.titleLabel.Location = new System.Drawing.Point(7, 13);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(135, 21);
+            this.titleLabel.TabIndex = 1;
+            this.titleLabel.Text = "Announcements";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 540);
+            this.Controls.Add(this.dashboardPanel);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -143,6 +178,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Organization";
             this.panel1.ResumeLayout(false);
+            this.dashboardPanel.ResumeLayout(false);
+            this.dashboardPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -155,5 +192,8 @@
         private System.Windows.Forms.Button messagesButton;
         private System.Windows.Forms.Button coursesButton;
         private System.Windows.Forms.Button announcementsButton;
+        private System.Windows.Forms.Panel dashboardPanel;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label titleLabel;
     }
 }

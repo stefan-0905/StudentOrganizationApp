@@ -35,7 +35,6 @@ namespace StudentOrganizationControlLibrary
 
             if (size.Width > 294)
             {
-                MessageBox.Show(size.ToString());
                 description = description.Substring(0, 50);
                 description = string.Concat(description, "...");
             }

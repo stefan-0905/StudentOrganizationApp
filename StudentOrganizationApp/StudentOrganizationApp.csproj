@@ -79,5 +79,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StudentOrganizationControlLibrary\StudentOrganizationControlLibrary.csproj">
+      <Project>{d29dd18c-7278-460e-ab99-1e206d854854}</Project>
+      <Name>StudentOrganizationControlLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentOrganizationLibrary\StudentOrganizationLibrary.csproj">
+      <Project>{654da724-578f-4d1d-8b72-0f26c30fea2f}</Project>
+      <Name>StudentOrganizationLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
