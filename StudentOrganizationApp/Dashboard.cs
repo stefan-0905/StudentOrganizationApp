@@ -14,10 +14,28 @@ namespace StudentOrganizationApp
 {
     public partial class Dashboard : Form
     {
+        public readonly StOrgDbContext _context = new StOrgDbContext();
         public Dashboard()
         {
             InitializeComponent();
+        }
+
+        private void NavigationButton_MouseEnter(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.ForeColor = Color.Gold;
+        }
+
+        private void NavigationButton_MouseLeave(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.ForeColor = Color.FromArgb(47, 100, 183);
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
             InitiateAnnouncements();
+            dashboardPanel.BringToFront();
         }
 
         private void InitiateAnnouncements()
@@ -34,20 +52,28 @@ namespace StudentOrganizationApp
 
             foreach (var announcement in announcements)
             {
-                flowLayoutPanel1.Controls.Add(new CardControl(announcement.Title, announcement.Description));
+                CardControl cardControl = new CardControl(announcement.Title, announcement.Description);
+                
+                flowLayoutPanel1.Controls.Add(cardControl);
             }
         }
 
-        private void NavigationButton_MouseEnter(object sender, EventArgs e)
+        private void DashboardButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-            button.ForeColor = Color.Gold;
+            this.Text = "Student Organization - Dashboard";
+            dashboardPanel.BringToFront();
         }
 
-        private void NavigationButton_MouseLeave(object sender, EventArgs e)
+        private void AnnouncementsButton_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-            button.ForeColor = Color.FromArgb(47, 100, 183);
+            this.Text = "Student Organization - Announcements";
+            announcementsPanel.BringToFront();
+        }
+
+        private void CreateBtn_Click(object sender, EventArgs e)
+        {
+            CreateNewAnnouncementForm newAnnouncement = new CreateNewAnnouncementForm(this);
+            newAnnouncement.Show();
         }
     }
 }
