@@ -15,9 +15,19 @@ namespace StudentOrganizationApp
     public partial class Dashboard : Form
     {
         public readonly StOrgDbContext _context = new StOrgDbContext();
+        public BindingList<Announcement> Announcements = new BindingList<Announcement>();
         public Dashboard()
         {
             InitializeComponent();
+        }
+
+        private void PopulateAnnouncements()
+        {
+            List<Announcement> announcements = _context.Announcements.ToList();
+            foreach(Announcement announcement in announcements)
+            {
+                Announcements.Add(announcement);
+            }
         }
 
         private void NavigationButton_MouseEnter(object sender, EventArgs e)
@@ -40,22 +50,17 @@ namespace StudentOrganizationApp
 
         private void InitiateAnnouncements()
         {
-            string myheading = "My new HeadinHeadingHeadingHeadingHeadingHeadingHeadingg";
-            string mydescription = "My new description about announcement. And something more.";
-            string myheading2 = "My new Heading";
-            string mydescription2 = "My new description about announcement.";
+            PopulateAnnouncements();
 
-            Announcement[] announcements = {
-                new Announcement(myheading, mydescription),
-                new Announcement(myheading2, mydescription2)
-            };
-
-            foreach (var announcement in announcements)
+            foreach (var announcement in Announcements.Take(3))
             {
                 CardControl cardControl = new CardControl(announcement.Title, announcement.Description);
                 
                 flowLayoutPanel1.Controls.Add(cardControl);
             }
+
+            announcementsListBox.DataSource = Announcements;
+            announcementsListBox.DisplayMember = "Title";
         }
 
         private void DashboardButton_Click(object sender, EventArgs e)

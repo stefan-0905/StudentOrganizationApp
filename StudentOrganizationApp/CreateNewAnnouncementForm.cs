@@ -27,7 +27,6 @@ namespace StudentOrganizationApp
 
         private async void CreateBtn_Click(object sender, EventArgs e)
         {
-
             if (ValidateForm())
             {
                 myDashboard._context.Announcements.Add(new Announcement
@@ -38,11 +37,13 @@ namespace StudentOrganizationApp
                 await myDashboard._context.SaveChangesAsync();
 
                 this.Close();
-
             }
-
         }
 
+        /// <summary>
+        /// Validate textbox input.
+        /// </summary>
+        /// <returns>True if all validates correctly</returns>
         private bool ValidateForm()
         {
             if(BoxIsEmpty(titleValue, titleBackRed) || BoxIsEmpty(descriptionValue, descriptionBackRed))
@@ -54,6 +55,13 @@ namespace StudentOrganizationApp
                 return true;
             }
         }
+
+        /// <summary>
+        /// Check if TextBox is Empty.
+        /// </summary>
+        /// <param name="textBox">TextBox to check.</param>
+        /// <param name="label">Label for displaying behind textbox if it is empty.</param>
+        /// <returns>True if it's empty.</returns>
         private bool BoxIsEmpty(TextBox textBox, Label label)
         {
             if (string.IsNullOrEmpty(textBox.Text))
@@ -67,6 +75,13 @@ namespace StudentOrganizationApp
                 return false;
             }
         }
+
+        /// <summary>
+        /// Check if RichTextBox is Empty.
+        /// </summary>
+        /// <param name="textBox">TextBox to check.</param>
+        /// <param name="label">Label for displaying behind textbox if it is empty.</param>
+        /// <returns>True if it's empty.</returns>
         private bool BoxIsEmpty(RichTextBox textBox, Label label)
         {
             if (string.IsNullOrEmpty(textBox.Text))

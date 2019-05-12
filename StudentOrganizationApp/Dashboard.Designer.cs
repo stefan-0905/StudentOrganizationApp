@@ -35,27 +35,27 @@
             this.announcementsButton = new System.Windows.Forms.Button();
             this.dashboardButton = new System.Windows.Forms.Button();
             this.dashboardPanel = new System.Windows.Forms.Panel();
-            this.announcementsPanel = new System.Windows.Forms.Panel();
-            this.announcementsManagerHeaderLabel = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.dashboardContentPanel = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.dashboardHeadingPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.dashboardContentPanel = new System.Windows.Forms.Panel();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.announcementsContentPanel = new System.Windows.Forms.Panel();
+            this.announcementsPanel = new System.Windows.Forms.Panel();
             this.createBtn = new System.Windows.Forms.Button();
-            this.announcementsListView = new System.Windows.Forms.ListView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.announcementsContentPanel = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.announcementsManagerHeaderLabel = new System.Windows.Forms.Label();
+            this.announcementsListBox = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.dashboardPanel.SuspendLayout();
-            this.announcementsPanel.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.dashboardHeadingPanel.SuspendLayout();
             this.dashboardContentPanel.SuspendLayout();
+            this.dashboardHeadingPanel.SuspendLayout();
+            this.announcementsPanel.SuspendLayout();
             this.announcementsContentPanel.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -164,37 +164,40 @@
             this.dashboardPanel.Size = new System.Drawing.Size(844, 540);
             this.dashboardPanel.TabIndex = 1;
             // 
-            // announcementsPanel
+            // dashboardContentPanel
             // 
-            this.announcementsPanel.Controls.Add(this.createBtn);
-            this.announcementsPanel.Controls.Add(this.announcementsContentPanel);
-            this.announcementsPanel.Controls.Add(this.panel2);
-            this.announcementsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.announcementsPanel.Location = new System.Drawing.Point(200, 0);
-            this.announcementsPanel.Name = "announcementsPanel";
-            this.announcementsPanel.Size = new System.Drawing.Size(644, 540);
-            this.announcementsPanel.TabIndex = 2;
+            this.dashboardContentPanel.Controls.Add(this.flowLayoutPanel1);
+            this.dashboardContentPanel.Controls.Add(this.titleLabel);
+            this.dashboardContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dashboardContentPanel.Location = new System.Drawing.Point(0, 53);
+            this.dashboardContentPanel.Name = "dashboardContentPanel";
+            this.dashboardContentPanel.Size = new System.Drawing.Size(844, 487);
+            this.dashboardContentPanel.TabIndex = 3;
             // 
-            // announcementsManagerHeaderLabel
+            // flowLayoutPanel1
             // 
-            this.announcementsManagerHeaderLabel.AutoSize = true;
-            this.announcementsManagerHeaderLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.announcementsManagerHeaderLabel.ForeColor = System.Drawing.Color.White;
-            this.announcementsManagerHeaderLabel.Location = new System.Drawing.Point(14, 14);
-            this.announcementsManagerHeaderLabel.Name = "announcementsManagerHeaderLabel";
-            this.announcementsManagerHeaderLabel.Size = new System.Drawing.Size(207, 21);
-            this.announcementsManagerHeaderLabel.TabIndex = 0;
-            this.announcementsManagerHeaderLabel.Text = "Announcements Manager";
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(18, 46);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(796, 225);
+            this.flowLayoutPanel1.TabIndex = 2;
+            this.flowLayoutPanel1.WrapContents = false;
             // 
-            // panel2
+            // titleLabel
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(100)))), ((int)(((byte)(183)))));
-            this.panel2.Controls.Add(this.announcementsManagerHeaderLabel);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(644, 53);
-            this.panel2.TabIndex = 1;
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Enabled = false;
+            this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.titleLabel.Location = new System.Drawing.Point(14, 12);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(191, 21);
+            this.titleLabel.TabIndex = 3;
+            this.titleLabel.Text = "Recent Announcements";
             // 
             // dashboardHeadingPanel
             // 
@@ -217,52 +220,16 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Dashboard";
             // 
-            // dashboardContentPanel
+            // announcementsPanel
             // 
-            this.dashboardContentPanel.Controls.Add(this.flowLayoutPanel1);
-            this.dashboardContentPanel.Controls.Add(this.titleLabel);
-            this.dashboardContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dashboardContentPanel.Location = new System.Drawing.Point(0, 53);
-            this.dashboardContentPanel.Name = "dashboardContentPanel";
-            this.dashboardContentPanel.Size = new System.Drawing.Size(844, 487);
-            this.dashboardContentPanel.TabIndex = 3;
-            // 
-            // titleLabel
-            // 
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.Enabled = false;
-            this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.titleLabel.Location = new System.Drawing.Point(14, 12);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(191, 21);
-            this.titleLabel.TabIndex = 3;
-            this.titleLabel.Text = "Recent Announcements";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(18, 46);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(796, 225);
-            this.flowLayoutPanel1.TabIndex = 2;
-            this.flowLayoutPanel1.WrapContents = false;
-            // 
-            // announcementsContentPanel
-            // 
-            this.announcementsContentPanel.Controls.Add(this.button3);
-            this.announcementsContentPanel.Controls.Add(this.button2);
-            this.announcementsContentPanel.Controls.Add(this.button1);
-            this.announcementsContentPanel.Controls.Add(this.announcementsListView);
-            this.announcementsContentPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.announcementsContentPanel.Location = new System.Drawing.Point(0, 119);
-            this.announcementsContentPanel.Name = "announcementsContentPanel";
-            this.announcementsContentPanel.Size = new System.Drawing.Size(644, 421);
-            this.announcementsContentPanel.TabIndex = 2;
+            this.announcementsPanel.Controls.Add(this.createBtn);
+            this.announcementsPanel.Controls.Add(this.announcementsContentPanel);
+            this.announcementsPanel.Controls.Add(this.panel2);
+            this.announcementsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.announcementsPanel.Location = new System.Drawing.Point(200, 0);
+            this.announcementsPanel.Name = "announcementsPanel";
+            this.announcementsPanel.Size = new System.Drawing.Size(644, 540);
+            this.announcementsPanel.TabIndex = 2;
             // 
             // createBtn
             // 
@@ -278,28 +245,29 @@
             this.createBtn.UseVisualStyleBackColor = false;
             this.createBtn.Click += new System.EventHandler(this.CreateBtn_Click);
             // 
-            // announcementsListView
+            // announcementsContentPanel
             // 
-            this.announcementsListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.announcementsListView.Dock = System.Windows.Forms.DockStyle.Top;
-            this.announcementsListView.Location = new System.Drawing.Point(0, 0);
-            this.announcementsListView.Name = "announcementsListView";
-            this.announcementsListView.Size = new System.Drawing.Size(644, 320);
-            this.announcementsListView.TabIndex = 0;
-            this.announcementsListView.UseCompatibleStateImageBehavior = false;
+            this.announcementsContentPanel.Controls.Add(this.announcementsListBox);
+            this.announcementsContentPanel.Controls.Add(this.button3);
+            this.announcementsContentPanel.Controls.Add(this.button2);
+            this.announcementsContentPanel.Controls.Add(this.button1);
+            this.announcementsContentPanel.Location = new System.Drawing.Point(0, 130);
+            this.announcementsContentPanel.Name = "announcementsContentPanel";
+            this.announcementsContentPanel.Size = new System.Drawing.Size(644, 410);
+            this.announcementsContentPanel.TabIndex = 2;
             // 
-            // button1
+            // button3
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(18, 343);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 30);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Show";
-            this.button1.UseVisualStyleBackColor = false;
+            this.button3.BackColor = System.Drawing.Color.Red;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(301, 343);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(121, 30);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Delete";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
@@ -314,18 +282,49 @@
             this.button2.Text = "Edit";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // button1
             // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(301, 343);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(121, 30);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = false;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(18, 343);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(121, 30);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Show";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(100)))), ((int)(((byte)(183)))));
+            this.panel2.Controls.Add(this.announcementsManagerHeaderLabel);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(644, 53);
+            this.panel2.TabIndex = 1;
+            // 
+            // announcementsManagerHeaderLabel
+            // 
+            this.announcementsManagerHeaderLabel.AutoSize = true;
+            this.announcementsManagerHeaderLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.announcementsManagerHeaderLabel.ForeColor = System.Drawing.Color.White;
+            this.announcementsManagerHeaderLabel.Location = new System.Drawing.Point(14, 14);
+            this.announcementsManagerHeaderLabel.Name = "announcementsManagerHeaderLabel";
+            this.announcementsManagerHeaderLabel.Size = new System.Drawing.Size(207, 21);
+            this.announcementsManagerHeaderLabel.TabIndex = 0;
+            this.announcementsManagerHeaderLabel.Text = "Announcements Manager";
+            // 
+            // announcementsListBox
+            // 
+            this.announcementsListBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.announcementsListBox.FormattingEnabled = true;
+            this.announcementsListBox.ItemHeight = 21;
+            this.announcementsListBox.Location = new System.Drawing.Point(0, 0);
+            this.announcementsListBox.Name = "announcementsListBox";
+            this.announcementsListBox.Size = new System.Drawing.Size(644, 319);
+            this.announcementsListBox.TabIndex = 4;
             // 
             // Dashboard
             // 
@@ -343,14 +342,14 @@
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panel1.ResumeLayout(false);
             this.dashboardPanel.ResumeLayout(false);
-            this.announcementsPanel.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.dashboardHeadingPanel.ResumeLayout(false);
-            this.dashboardHeadingPanel.PerformLayout();
             this.dashboardContentPanel.ResumeLayout(false);
             this.dashboardContentPanel.PerformLayout();
+            this.dashboardHeadingPanel.ResumeLayout(false);
+            this.dashboardHeadingPanel.PerformLayout();
+            this.announcementsPanel.ResumeLayout(false);
             this.announcementsContentPanel.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -377,6 +376,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListView announcementsListView;
+        private System.Windows.Forms.ListBox announcementsListBox;
     }
 }

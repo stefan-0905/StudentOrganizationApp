@@ -20,7 +20,10 @@ namespace StudentOrganizationControlLibrary
         {
             InitializeComponent();
 
-            headerLabel.Text = SubStringShortner(heading, headerLabel.Font, 126, 35);
+            ToolTip myToolTip = new ToolTip();
+            myToolTip.SetToolTip(headerLabel, heading);
+
+            headerLabel.Text = SubStringShortner(heading, headerLabel.Font, 126, 25);
             descriptionLabel.Text = SubStringShortner(description, descriptionLabel.Font, 294, 50);
         }
 
