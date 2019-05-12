@@ -45,29 +45,40 @@ namespace StudentOrganizationApp
 
         private bool ValidateForm()
         {
-            bool validated = true;
-
-            if(string.IsNullOrEmpty(titleValue.Text))
+            if(BoxIsEmpty(titleValue, titleBackRed) || BoxIsEmpty(descriptionValue, descriptionBackRed))
             {
-                validated = false;
-                titleBackgroundRed.Visible = true;
+                return false;
             }
             else
             {
-                titleBackgroundRed.Visible = false;
+                return true;
             }
-
-            if(string.IsNullOrEmpty(descriptionValue.Text))
+        }
+        private bool BoxIsEmpty(TextBox textBox, Label label)
+        {
+            if (string.IsNullOrEmpty(textBox.Text))
             {
-                validated = false;
-                descriptionBackRed.Visible = true;
+                label.Visible = true;
+                return true;
             }
             else
             {
-                descriptionBackRed.Visible = false;
+                label.Visible = false;
+                return false;
             }
-
-            return validated;
+        }
+        private bool BoxIsEmpty(RichTextBox textBox, Label label)
+        {
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                label.Visible = true;
+                return true;
+            }
+            else
+            {
+                label.Visible = false;
+                return false;
+            }
         }
     }
 }

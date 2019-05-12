@@ -34,7 +34,7 @@
             this.descriptionValue = new System.Windows.Forms.RichTextBox();
             this.createBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
-            this.titleBackgroundRed = new System.Windows.Forms.Label();
+            this.titleBackRed = new System.Windows.Forms.Label();
             this.descriptionBackRed = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -99,14 +99,14 @@
             this.cancelBtn.UseVisualStyleBackColor = false;
             this.cancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
-            // titleBackgroundRed
+            // titleBackRed
             // 
-            this.titleBackgroundRed.BackColor = System.Drawing.Color.Red;
-            this.titleBackgroundRed.Location = new System.Drawing.Point(15, 34);
-            this.titleBackgroundRed.Name = "titleBackgroundRed";
-            this.titleBackgroundRed.Size = new System.Drawing.Size(465, 31);
-            this.titleBackgroundRed.TabIndex = 6;
-            this.titleBackgroundRed.Visible = false;
+            this.titleBackRed.BackColor = System.Drawing.Color.Red;
+            this.titleBackRed.Location = new System.Drawing.Point(15, 34);
+            this.titleBackRed.Name = "titleBackRed";
+            this.titleBackRed.Size = new System.Drawing.Size(465, 31);
+            this.titleBackRed.TabIndex = 6;
+            this.titleBackRed.Visible = false;
             // 
             // descriptionBackRed
             // 
@@ -129,7 +129,7 @@
             this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.titleValue);
             this.Controls.Add(this.titleLabel);
-            this.Controls.Add(this.titleBackgroundRed);
+            this.Controls.Add(this.titleBackRed);
             this.Controls.Add(this.descriptionBackRed);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -149,7 +149,7 @@
         private System.Windows.Forms.RichTextBox descriptionValue;
         private System.Windows.Forms.Button createBtn;
         private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.Label titleBackgroundRed;
+        private System.Windows.Forms.Label titleBackRed;
         private System.Windows.Forms.Label descriptionBackRed;
     }
 }
