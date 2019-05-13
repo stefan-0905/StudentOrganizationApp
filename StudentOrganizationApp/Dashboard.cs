@@ -46,7 +46,7 @@ namespace StudentOrganizationApp
             foreach (var announcement in Announcements.Take(3))
             {
                 CardControl cardControl = new CardControl(announcement);
-                flowLayoutPanel1.Controls.Add(cardControl);
+                announcementsFLPanel.Controls.Add(cardControl);
             }
 
             announcementsListBox.DataSource = Announcements;
@@ -55,7 +55,7 @@ namespace StudentOrganizationApp
 
         private void PopulateAnnouncements()
         {
-            List<Announcement> announcements = _context.Announcements.ToList();
+            List<Announcement> announcements = _context.Announcements.OrderByDescending(x => x.CreatedAt).ToList();
             foreach (Announcement announcement in announcements)
             {
                 Announcements.Add(announcement);
@@ -95,12 +95,19 @@ namespace StudentOrganizationApp
                 Announcements.Remove(delAnnouncement);
 
                 // Update flowLayoutPanel
-                foreach(CardControl control in flowLayoutPanel1.Controls)
+                foreach(CardControl control in announcementsFLPanel.Controls)
                 {
                     if((int)control.Tag == delAnnouncement.Id)
                     {
-                        flowLayoutPanel1.Controls.Remove(control);
-                        // TODO if deleted, flowLayoutPanel will have 1 less control instead of always 3 if possible
+                        announcementsFLPanel.Controls.Remove(control);
+
+                        // Reset panel with new set of recent announcements
+                        announcementsFLPanel.Controls.Clear();
+                        foreach (var announcement in Announcements.Take(3))
+                        {
+                            CardControl cardControl = new CardControl(announcement);
+                            announcementsFLPanel.Controls.Add(cardControl);
+                        }
                     }
                 }
             }

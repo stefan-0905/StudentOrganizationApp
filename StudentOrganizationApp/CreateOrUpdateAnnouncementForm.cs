@@ -46,12 +46,15 @@ namespace StudentOrganizationApp
                 };
                 myDashboard._context.Announcements.Add(newAnnounce);
 
-                myDashboard.Announcements.Add(newAnnounce);
+                myDashboard.Announcements.Insert(0, newAnnounce);
 
-                if(myDashboard.flowLayoutPanel1.Controls.Count < 3)
+                myDashboard.announcementsFLPanel.Controls.Clear();
+                foreach (var announcement in myDashboard.Announcements.Take(3))
                 {
-                    myDashboard.flowLayoutPanel1.Controls.Add(new CardControl(newAnnounce));
+                    CardControl cardControl = new CardControl(announcement);
+                    myDashboard.announcementsFLPanel.Controls.Add(cardControl);
                 }
+                
 
                 await myDashboard._context.SaveChangesAsync();
 
@@ -133,7 +136,7 @@ namespace StudentOrganizationApp
 
                     myDashboard.Announcements.ResetBindings();
 
-                    foreach (CardControl control in myDashboard.flowLayoutPanel1.Controls)
+                    foreach (CardControl control in myDashboard.announcementsFLPanel.Controls)
                     {
                         if ((int)control.Tag == editAnnounce.Id)
                         {

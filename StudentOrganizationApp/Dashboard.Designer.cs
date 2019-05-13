@@ -36,7 +36,7 @@
             this.dashboardButton = new System.Windows.Forms.Button();
             this.dashboardPanel = new System.Windows.Forms.Panel();
             this.dashboardContentPanel = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.announcementsFLPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.titleLabel = new System.Windows.Forms.Label();
             this.dashboardHeadingPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -166,7 +166,7 @@
             // 
             // dashboardContentPanel
             // 
-            this.dashboardContentPanel.Controls.Add(this.flowLayoutPanel1);
+            this.dashboardContentPanel.Controls.Add(this.announcementsFLPanel);
             this.dashboardContentPanel.Controls.Add(this.titleLabel);
             this.dashboardContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashboardContentPanel.Location = new System.Drawing.Point(0, 53);
@@ -174,18 +174,18 @@
             this.dashboardContentPanel.Size = new System.Drawing.Size(844, 487);
             this.dashboardContentPanel.TabIndex = 3;
             // 
-            // flowLayoutPanel1
+            // announcementsFLPanel
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.announcementsFLPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(18, 46);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(796, 225);
-            this.flowLayoutPanel1.TabIndex = 2;
-            this.flowLayoutPanel1.WrapContents = false;
+            this.announcementsFLPanel.AutoScroll = true;
+            this.announcementsFLPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.announcementsFLPanel.Location = new System.Drawing.Point(18, 46);
+            this.announcementsFLPanel.Name = "announcementsFLPanel";
+            this.announcementsFLPanel.Size = new System.Drawing.Size(796, 225);
+            this.announcementsFLPanel.TabIndex = 2;
+            this.announcementsFLPanel.WrapContents = false;
             // 
             // titleLabel
             // 
@@ -373,7 +373,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel dashboardContentPanel;
         private System.Windows.Forms.Label titleLabel;
-        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        public System.Windows.Forms.FlowLayoutPanel announcementsFLPanel;
         private System.Windows.Forms.Button createBtn;
         private System.Windows.Forms.Panel announcementsContentPanel;
         private System.Windows.Forms.Button deleteBtn;
