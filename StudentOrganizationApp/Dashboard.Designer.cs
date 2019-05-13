@@ -43,12 +43,12 @@
             this.announcementsPanel = new System.Windows.Forms.Panel();
             this.createBtn = new System.Windows.Forms.Button();
             this.announcementsContentPanel = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.announcementsListBox = new System.Windows.Forms.ListBox();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.editBtn = new System.Windows.Forms.Button();
+            this.showBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.announcementsManagerHeaderLabel = new System.Windows.Forms.Label();
-            this.announcementsListBox = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.dashboardPanel.SuspendLayout();
             this.dashboardContentPanel.SuspendLayout();
@@ -248,52 +248,64 @@
             // announcementsContentPanel
             // 
             this.announcementsContentPanel.Controls.Add(this.announcementsListBox);
-            this.announcementsContentPanel.Controls.Add(this.button3);
-            this.announcementsContentPanel.Controls.Add(this.button2);
-            this.announcementsContentPanel.Controls.Add(this.button1);
+            this.announcementsContentPanel.Controls.Add(this.deleteBtn);
+            this.announcementsContentPanel.Controls.Add(this.editBtn);
+            this.announcementsContentPanel.Controls.Add(this.showBtn);
             this.announcementsContentPanel.Location = new System.Drawing.Point(0, 130);
             this.announcementsContentPanel.Name = "announcementsContentPanel";
             this.announcementsContentPanel.Size = new System.Drawing.Size(644, 410);
             this.announcementsContentPanel.TabIndex = 2;
             // 
-            // button3
+            // announcementsListBox
             // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(301, 343);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(121, 30);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = false;
+            this.announcementsListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.announcementsListBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.announcementsListBox.FormattingEnabled = true;
+            this.announcementsListBox.ItemHeight = 21;
+            this.announcementsListBox.Location = new System.Drawing.Point(0, 0);
+            this.announcementsListBox.Name = "announcementsListBox";
+            this.announcementsListBox.Size = new System.Drawing.Size(644, 315);
+            this.announcementsListBox.TabIndex = 4;
             // 
-            // button2
+            // deleteBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.Blue;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(159, 343);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 30);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = false;
+            this.deleteBtn.BackColor = System.Drawing.Color.Red;
+            this.deleteBtn.FlatAppearance.BorderSize = 0;
+            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteBtn.ForeColor = System.Drawing.Color.White;
+            this.deleteBtn.Location = new System.Drawing.Point(301, 343);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(121, 30);
+            this.deleteBtn.TabIndex = 3;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
-            // button1
+            // editBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(18, 343);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 30);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Show";
-            this.button1.UseVisualStyleBackColor = false;
+            this.editBtn.BackColor = System.Drawing.Color.Blue;
+            this.editBtn.FlatAppearance.BorderSize = 0;
+            this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editBtn.ForeColor = System.Drawing.Color.White;
+            this.editBtn.Location = new System.Drawing.Point(159, 343);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Size = new System.Drawing.Size(121, 30);
+            this.editBtn.TabIndex = 2;
+            this.editBtn.Text = "Edit";
+            this.editBtn.UseVisualStyleBackColor = false;
+            // 
+            // showBtn
+            // 
+            this.showBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.showBtn.FlatAppearance.BorderSize = 0;
+            this.showBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showBtn.ForeColor = System.Drawing.Color.White;
+            this.showBtn.Location = new System.Drawing.Point(18, 343);
+            this.showBtn.Name = "showBtn";
+            this.showBtn.Size = new System.Drawing.Size(121, 30);
+            this.showBtn.TabIndex = 1;
+            this.showBtn.Text = "Show";
+            this.showBtn.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -315,16 +327,6 @@
             this.announcementsManagerHeaderLabel.Size = new System.Drawing.Size(207, 21);
             this.announcementsManagerHeaderLabel.TabIndex = 0;
             this.announcementsManagerHeaderLabel.Text = "Announcements Manager";
-            // 
-            // announcementsListBox
-            // 
-            this.announcementsListBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.announcementsListBox.FormattingEnabled = true;
-            this.announcementsListBox.ItemHeight = 21;
-            this.announcementsListBox.Location = new System.Drawing.Point(0, 0);
-            this.announcementsListBox.Name = "announcementsListBox";
-            this.announcementsListBox.Size = new System.Drawing.Size(644, 319);
-            this.announcementsListBox.TabIndex = 4;
             // 
             // Dashboard
             // 
@@ -370,12 +372,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel dashboardContentPanel;
         private System.Windows.Forms.Label titleLabel;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button createBtn;
         private System.Windows.Forms.Panel announcementsContentPanel;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.Button editBtn;
+        private System.Windows.Forms.Button showBtn;
         private System.Windows.Forms.ListBox announcementsListBox;
     }
 }

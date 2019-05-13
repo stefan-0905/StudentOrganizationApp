@@ -1,4 +1,5 @@
-﻿using StudentOrganizationLibrary;
+﻿using StudentOrganizationControlLibrary;
+using StudentOrganizationLibrary;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,11 +30,15 @@ namespace StudentOrganizationApp
         {
             if (ValidateForm())
             {
-                myDashboard._context.Announcements.Add(new Announcement
+                Announcement newAnnounce = new Announcement
                 {
                     Title = titleValue.Text,
                     Description = descriptionValue.Text
-                });
+                };
+                myDashboard._context.Announcements.Add(newAnnounce);
+                myDashboard.flowLayoutPanel1.Controls.Add(new CardControl(newAnnounce));
+                myDashboard.Announcements.Add(newAnnounce);
+
                 await myDashboard._context.SaveChangesAsync();
 
                 this.Close();

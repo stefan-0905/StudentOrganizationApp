@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StudentOrganizationLibrary;
 
 namespace StudentOrganizationControlLibrary
 {
@@ -16,15 +17,17 @@ namespace StudentOrganizationControlLibrary
         {
             InitializeComponent();
         }
-        public CardControl(string heading, string description)
+        public CardControl(Announcement announce)
         {
             InitializeComponent();
 
-            ToolTip myToolTip = new ToolTip();
-            myToolTip.SetToolTip(headerLabel, heading);
+            this.Tag = announce.Id;
 
-            headerLabel.Text = SubStringShortner(heading, headerLabel.Font, 126, 25);
-            descriptionLabel.Text = SubStringShortner(description, descriptionLabel.Font, 294, 50);
+            ToolTip myToolTip = new ToolTip();
+            myToolTip.SetToolTip(headerLabel, announce.Title);
+
+            headerLabel.Text = SubStringShortner(announce.Title, headerLabel.Font, 126, 25);
+            descriptionLabel.Text = SubStringShortner(announce.Description, descriptionLabel.Font, 294, 50);
         }
 
         private string SubStringShortner(string text, Font fontSize, int maxWidth, int charLength)

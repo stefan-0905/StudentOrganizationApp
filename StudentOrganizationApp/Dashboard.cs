@@ -54,8 +54,7 @@ namespace StudentOrganizationApp
 
             foreach (var announcement in Announcements.Take(3))
             {
-                CardControl cardControl = new CardControl(announcement.Title, announcement.Description);
-                
+                CardControl cardControl = new CardControl(announcement);
                 flowLayoutPanel1.Controls.Add(cardControl);
             }
 
@@ -79,6 +78,29 @@ namespace StudentOrganizationApp
         {
             CreateNewAnnouncementForm newAnnouncement = new CreateNewAnnouncementForm(this);
             newAnnouncement.Show();
+        }
+
+        private async void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            var confirmDeletion = MessageBox.Show("Are you sure you want to delete this announcement?", "Confirm Delete", MessageBoxButtons.YesNo);
+            if(confirmDeletion == DialogResult.Yes)
+            {
+                Announcement delAnnouncement = (Announcement)announcementsListBox.SelectedItem;
+                // Delete announcement from db
+                _context.Announcements.Remove(delAnnouncement);
+                // Update ListBox 
+                Announcements.Remove(delAnnouncement);
+                // Update flowLayoutPanel
+                foreach(CardControl control in flowLayoutPanel1.Controls)
+                {
+                    if((int)control.Tag == delAnnouncement.Id)
+                    {
+                        flowLayoutPanel1.Controls.Remove(control);
+                    }
+                }
+
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }
