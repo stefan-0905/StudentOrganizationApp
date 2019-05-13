@@ -26,11 +26,11 @@ namespace StudentOrganizationControlLibrary
             ToolTip myToolTip = new ToolTip();
             myToolTip.SetToolTip(headerLabel, announce.Title);
 
-            headerLabel.Text = SubStringShortner(announce.Title, headerLabel.Font, 126, 25);
-            descriptionLabel.Text = SubStringShortner(announce.Description, descriptionLabel.Font, 294, 50);
+            headerLabel.Text = SubStringShortener(announce.Title, headerLabel.Font, 126, 25);
+            descriptionLabel.Text = SubStringShortener(announce.Description, descriptionLabel.Font, 294, 50);
         }
 
-        private string SubStringShortner(string text, Font fontSize, int maxWidth, int charLength)
+        public string SubStringShortener(string text, Font fontSize, int maxWidth, int charLength)
         {
             string resultString = text;
             Graphics g = CreateGraphics();
@@ -38,8 +38,13 @@ namespace StudentOrganizationControlLibrary
 
             if (size.Width > maxWidth)
             {
-                resultString = text.Substring(0, charLength);
-                resultString = string.Concat(resultString, "...");
+                try
+                {
+                    resultString = text.Substring(0, charLength);
+                    resultString = string.Concat(resultString, "...");
+                }
+                catch { }
+                
             }
 
             return resultString;

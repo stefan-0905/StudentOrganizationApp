@@ -1,6 +1,6 @@
 ﻿namespace StudentOrganizationApp
 {
-    partial class CreateNewAnnouncementForm
+    partial class CreateOrUpdateAnnouncementForm
     {
         /// <summary>
         /// Required designer variable.
@@ -36,6 +36,7 @@
             this.cancelBtn = new System.Windows.Forms.Button();
             this.titleBackRed = new System.Windows.Forms.Label();
             this.descriptionBackRed = new System.Windows.Forms.Label();
+            this.updateBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -118,7 +119,21 @@
             this.descriptionBackRed.Text = "label1";
             this.descriptionBackRed.Visible = false;
             // 
-            // CreateNewAnnouncementForm
+            // updateBtn
+            // 
+            this.updateBtn.BackColor = System.Drawing.Color.MediumBlue;
+            this.updateBtn.FlatAppearance.BorderSize = 0;
+            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateBtn.ForeColor = System.Drawing.Color.White;
+            this.updateBtn.Location = new System.Drawing.Point(133, 365);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(94, 30);
+            this.updateBtn.TabIndex = 8;
+            this.updateBtn.Text = "Update";
+            this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
+            // 
+            // CreateOrUpdateAnnouncementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -131,9 +146,10 @@
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.titleBackRed);
             this.Controls.Add(this.descriptionBackRed);
+            this.Controls.Add(this.updateBtn);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "CreateNewAnnouncementForm";
+            this.Name = "CreateOrUpdateAnnouncementForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create New Announcement";
             this.ResumeLayout(false);
@@ -151,5 +167,6 @@
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Label titleBackRed;
         private System.Windows.Forms.Label descriptionBackRed;
+        private System.Windows.Forms.Button updateBtn;
     }
 }

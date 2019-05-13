@@ -21,15 +21,6 @@ namespace StudentOrganizationApp
             InitializeComponent();
         }
 
-        private void PopulateAnnouncements()
-        {
-            List<Announcement> announcements = _context.Announcements.ToList();
-            foreach(Announcement announcement in announcements)
-            {
-                Announcements.Add(announcement);
-            }
-        }
-
         private void NavigationButton_MouseEnter(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -62,6 +53,15 @@ namespace StudentOrganizationApp
             announcementsListBox.DisplayMember = "Title";
         }
 
+        private void PopulateAnnouncements()
+        {
+            List<Announcement> announcements = _context.Announcements.ToList();
+            foreach (Announcement announcement in announcements)
+            {
+                Announcements.Add(announcement);
+            }
+        }
+
         private void DashboardButton_Click(object sender, EventArgs e)
         {
             this.Text = "Student Organization - Dashboard";
@@ -76,7 +76,7 @@ namespace StudentOrganizationApp
 
         private void CreateBtn_Click(object sender, EventArgs e)
         {
-            CreateNewAnnouncementForm newAnnouncement = new CreateNewAnnouncementForm(this);
+            CreateOrUpdateAnnouncementForm newAnnouncement = new CreateOrUpdateAnnouncementForm(this);
             newAnnouncement.Show();
         }
 
@@ -86,21 +86,30 @@ namespace StudentOrganizationApp
             if(confirmDeletion == DialogResult.Yes)
             {
                 Announcement delAnnouncement = (Announcement)announcementsListBox.SelectedItem;
+
                 // Delete announcement from db
                 _context.Announcements.Remove(delAnnouncement);
+                await _context.SaveChangesAsync();
+
                 // Update ListBox 
                 Announcements.Remove(delAnnouncement);
+
                 // Update flowLayoutPanel
                 foreach(CardControl control in flowLayoutPanel1.Controls)
                 {
                     if((int)control.Tag == delAnnouncement.Id)
                     {
                         flowLayoutPanel1.Controls.Remove(control);
+                        // TODO if deleted, flowLayoutPanel will have 1 less control instead of always 3 if possible
                     }
                 }
-
-                await _context.SaveChangesAsync();
             }
+        }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            CreateOrUpdateAnnouncementForm announcementForm = new CreateOrUpdateAnnouncementForm(this, (Announcement)announcementsListBox.SelectedItem);
+            announcementForm.Show();
         }
     }
 }

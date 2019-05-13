@@ -12,13 +12,22 @@ using System.Windows.Forms;
 
 namespace StudentOrganizationApp
 {
-    public partial class CreateNewAnnouncementForm : Form
+    public partial class CreateOrUpdateAnnouncementForm : Form
     {
         private Dashboard myDashboard;
-        public CreateNewAnnouncementForm(Dashboard dash)
+        private Announcement editAnnounce = null;
+        public CreateOrUpdateAnnouncementForm(Dashboard dash, Announcement announce = null)
         {
             myDashboard = dash;
             InitializeComponent();
+            if(announce != null)
+            {
+                editAnnounce = announce;
+                this.titleValue.Text = announce.Title;
+                this.descriptionValue.Text = announce.Description;
+                this.Text = "Edit Announcement";
+                this.createBtn.Visible = false;
+            }
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)
@@ -36,8 +45,13 @@ namespace StudentOrganizationApp
                     Description = descriptionValue.Text
                 };
                 myDashboard._context.Announcements.Add(newAnnounce);
-                myDashboard.flowLayoutPanel1.Controls.Add(new CardControl(newAnnounce));
+
                 myDashboard.Announcements.Add(newAnnounce);
+
+                if(myDashboard.flowLayoutPanel1.Controls.Count < 3)
+                {
+                    myDashboard.flowLayoutPanel1.Controls.Add(new CardControl(newAnnounce));
+                }
 
                 await myDashboard._context.SaveChangesAsync();
 
@@ -98,6 +112,42 @@ namespace StudentOrganizationApp
             {
                 label.Visible = false;
                 return false;
+            }
+        }
+
+        private void UpdateBtn_Click(object sender, EventArgs e)
+        {
+            if(ValidateForm())
+            {
+                Announcement recordForUpdate = myDashboard._context.Announcements.SingleOrDefault(x => x.Id == editAnnounce.Id);
+
+                editAnnounce.Title = titleValue.Text;
+                editAnnounce.Description = descriptionValue.Text;
+
+                if (recordForUpdate != null)
+                {
+                    recordForUpdate.Title = editAnnounce.Title;
+                    recordForUpdate.Description = editAnnounce.Description;
+
+                    myDashboard._context.SaveChanges();
+
+                    myDashboard.Announcements.ResetBindings();
+
+                    foreach (CardControl control in myDashboard.flowLayoutPanel1.Controls)
+                    {
+                        if ((int)control.Tag == editAnnounce.Id)
+                        {
+                            ToolTip myToolTip = new ToolTip();
+                            myToolTip.SetToolTip(control.headerLabel, editAnnounce.Title);
+
+                            control.headerLabel.Text = control.SubStringShortener(editAnnounce.Title, control.headerLabel.Font, 126, 25);
+                            
+                            control.descriptionLabel.Text = control.SubStringShortener(editAnnounce.Description, descriptionLabel.Font, 294, 50);
+                        }
+                    }
+
+                    this.Close();
+                }
             }
         }
     }
