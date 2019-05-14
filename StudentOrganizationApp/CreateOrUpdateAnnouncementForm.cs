@@ -44,10 +44,14 @@ namespace StudentOrganizationApp
                     Title = titleValue.Text,
                     Description = descriptionValue.Text
                 };
+                // Add to DB
                 myDashboard._context.Announcements.Add(newAnnounce);
+                await myDashboard._context.SaveChangesAsync();
 
+                // Update announcements listBox
                 myDashboard.Announcements.Insert(0, newAnnounce);
 
+                // Update panel with new set of recent announcements
                 myDashboard.announcementsFLPanel.Controls.Clear();
                 foreach (var announcement in myDashboard.Announcements.Take(3))
                 {
@@ -55,9 +59,6 @@ namespace StudentOrganizationApp
                     myDashboard.announcementsFLPanel.Controls.Add(cardControl);
                 }
                 
-
-                await myDashboard._context.SaveChangesAsync();
-
                 this.Close();
             }
         }

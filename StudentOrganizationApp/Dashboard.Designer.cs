@@ -49,6 +49,7 @@
             this.showBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.announcementsManagerHeaderLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.dashboardPanel.SuspendLayout();
             this.dashboardContentPanel.SuspendLayout();
@@ -159,9 +160,9 @@
             this.dashboardPanel.Controls.Add(this.dashboardContentPanel);
             this.dashboardPanel.Controls.Add(this.dashboardHeadingPanel);
             this.dashboardPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dashboardPanel.Location = new System.Drawing.Point(0, 0);
+            this.dashboardPanel.Location = new System.Drawing.Point(200, 0);
             this.dashboardPanel.Name = "dashboardPanel";
-            this.dashboardPanel.Size = new System.Drawing.Size(844, 540);
+            this.dashboardPanel.Size = new System.Drawing.Size(644, 540);
             this.dashboardPanel.TabIndex = 1;
             // 
             // dashboardContentPanel
@@ -171,7 +172,7 @@
             this.dashboardContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashboardContentPanel.Location = new System.Drawing.Point(0, 53);
             this.dashboardContentPanel.Name = "dashboardContentPanel";
-            this.dashboardContentPanel.Size = new System.Drawing.Size(844, 487);
+            this.dashboardContentPanel.Size = new System.Drawing.Size(644, 487);
             this.dashboardContentPanel.TabIndex = 3;
             // 
             // announcementsFLPanel
@@ -183,7 +184,7 @@
             this.announcementsFLPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.announcementsFLPanel.Location = new System.Drawing.Point(18, 46);
             this.announcementsFLPanel.Name = "announcementsFLPanel";
-            this.announcementsFLPanel.Size = new System.Drawing.Size(796, 225);
+            this.announcementsFLPanel.Size = new System.Drawing.Size(596, 225);
             this.announcementsFLPanel.TabIndex = 2;
             this.announcementsFLPanel.WrapContents = false;
             // 
@@ -206,7 +207,7 @@
             this.dashboardHeadingPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.dashboardHeadingPanel.Location = new System.Drawing.Point(0, 0);
             this.dashboardHeadingPanel.Name = "dashboardHeadingPanel";
-            this.dashboardHeadingPanel.Size = new System.Drawing.Size(844, 53);
+            this.dashboardHeadingPanel.Size = new System.Drawing.Size(644, 53);
             this.dashboardHeadingPanel.TabIndex = 2;
             // 
             // label2
@@ -222,6 +223,7 @@
             // 
             // announcementsPanel
             // 
+            this.announcementsPanel.Controls.Add(this.label1);
             this.announcementsPanel.Controls.Add(this.createBtn);
             this.announcementsPanel.Controls.Add(this.announcementsContentPanel);
             this.announcementsPanel.Controls.Add(this.panel2);
@@ -237,7 +239,7 @@
             this.createBtn.FlatAppearance.BorderSize = 0;
             this.createBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createBtn.ForeColor = System.Drawing.Color.White;
-            this.createBtn.Location = new System.Drawing.Point(18, 65);
+            this.createBtn.Location = new System.Drawing.Point(500, 61);
             this.createBtn.Name = "createBtn";
             this.createBtn.Size = new System.Drawing.Size(121, 43);
             this.createBtn.TabIndex = 3;
@@ -247,33 +249,39 @@
             // 
             // announcementsContentPanel
             // 
+            this.announcementsContentPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.announcementsContentPanel.Controls.Add(this.announcementsListBox);
             this.announcementsContentPanel.Controls.Add(this.deleteBtn);
             this.announcementsContentPanel.Controls.Add(this.editBtn);
             this.announcementsContentPanel.Controls.Add(this.showBtn);
-            this.announcementsContentPanel.Location = new System.Drawing.Point(0, 130);
+            this.announcementsContentPanel.Location = new System.Drawing.Point(0, 114);
             this.announcementsContentPanel.Name = "announcementsContentPanel";
-            this.announcementsContentPanel.Size = new System.Drawing.Size(644, 410);
+            this.announcementsContentPanel.Size = new System.Drawing.Size(644, 426);
             this.announcementsContentPanel.TabIndex = 2;
             // 
             // announcementsListBox
             // 
+            this.announcementsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.announcementsListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.announcementsListBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.announcementsListBox.FormattingEnabled = true;
             this.announcementsListBox.ItemHeight = 21;
-            this.announcementsListBox.Location = new System.Drawing.Point(0, 0);
+            this.announcementsListBox.Location = new System.Drawing.Point(18, 0);
             this.announcementsListBox.Name = "announcementsListBox";
-            this.announcementsListBox.Size = new System.Drawing.Size(644, 315);
+            this.announcementsListBox.Size = new System.Drawing.Size(603, 315);
             this.announcementsListBox.TabIndex = 4;
             // 
             // deleteBtn
             // 
+            this.deleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.deleteBtn.BackColor = System.Drawing.Color.Red;
             this.deleteBtn.FlatAppearance.BorderSize = 0;
             this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteBtn.ForeColor = System.Drawing.Color.White;
-            this.deleteBtn.Location = new System.Drawing.Point(301, 343);
+            this.deleteBtn.Location = new System.Drawing.Point(301, 341);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(121, 30);
             this.deleteBtn.TabIndex = 3;
@@ -283,11 +291,12 @@
             // 
             // editBtn
             // 
+            this.editBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.editBtn.BackColor = System.Drawing.Color.Blue;
             this.editBtn.FlatAppearance.BorderSize = 0;
             this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editBtn.ForeColor = System.Drawing.Color.White;
-            this.editBtn.Location = new System.Drawing.Point(159, 343);
+            this.editBtn.Location = new System.Drawing.Point(159, 341);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(121, 30);
             this.editBtn.TabIndex = 2;
@@ -297,16 +306,18 @@
             // 
             // showBtn
             // 
+            this.showBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.showBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.showBtn.FlatAppearance.BorderSize = 0;
             this.showBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.showBtn.ForeColor = System.Drawing.Color.White;
-            this.showBtn.Location = new System.Drawing.Point(18, 343);
+            this.showBtn.Location = new System.Drawing.Point(18, 341);
             this.showBtn.Name = "showBtn";
             this.showBtn.Size = new System.Drawing.Size(121, 30);
             this.showBtn.TabIndex = 1;
             this.showBtn.Text = "Show";
             this.showBtn.UseVisualStyleBackColor = false;
+            this.showBtn.Click += new System.EventHandler(this.ShowBtn_Click);
             // 
             // panel2
             // 
@@ -329,14 +340,25 @@
             this.announcementsManagerHeaderLabel.TabIndex = 0;
             this.announcementsManagerHeaderLabel.Text = "Announcements Manager";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(14, 76);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 21);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "History:";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 540);
             this.Controls.Add(this.announcementsPanel);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dashboardPanel);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Dashboard";
@@ -350,6 +372,7 @@
             this.dashboardHeadingPanel.ResumeLayout(false);
             this.dashboardHeadingPanel.PerformLayout();
             this.announcementsPanel.ResumeLayout(false);
+            this.announcementsPanel.PerformLayout();
             this.announcementsContentPanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -380,5 +403,6 @@
         private System.Windows.Forms.Button editBtn;
         private System.Windows.Forms.Button showBtn;
         private System.Windows.Forms.ListBox announcementsListBox;
+        private System.Windows.Forms.Label label1;
     }
 }

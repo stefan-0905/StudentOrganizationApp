@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.Card = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.headerLabel = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.Card.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,6 +45,17 @@
             this.Card.Name = "Card";
             this.Card.Size = new System.Drawing.Size(300, 18);
             this.Card.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(221, 1);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 15);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Read more";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // headerLabel
             // 
@@ -65,17 +76,6 @@
             this.descriptionLabel.Size = new System.Drawing.Size(174, 13);
             this.descriptionLabel.TabIndex = 1;
             this.descriptionLabel.Text = "Some desctiption of announcement";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(221, 1);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 15);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Read more";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // CardControl
             // 

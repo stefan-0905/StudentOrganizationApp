@@ -82,41 +82,70 @@ namespace StudentOrganizationApp
 
         private async void DeleteBtn_Click(object sender, EventArgs e)
         {
-            var confirmDeletion = MessageBox.Show("Are you sure you want to delete this announcement?", "Confirm Delete", MessageBoxButtons.YesNo);
-            if(confirmDeletion == DialogResult.Yes)
-            {
-                Announcement delAnnouncement = (Announcement)announcementsListBox.SelectedItem;
-
-                // Delete announcement from db
-                _context.Announcements.Remove(delAnnouncement);
-                await _context.SaveChangesAsync();
-
-                // Update ListBox 
-                Announcements.Remove(delAnnouncement);
-
-                // Update flowLayoutPanel
-                foreach(CardControl control in announcementsFLPanel.Controls)
+            Announcement delAnnouncement = (Announcement)announcementsListBox.SelectedItem;
+            if(delAnnouncement != null)
+            { 
+                var confirmDeletion = MessageBox.Show("Are you sure you want to delete this announcement?", "Confirm Delete", MessageBoxButtons.YesNo);
+                if (confirmDeletion == DialogResult.Yes)
                 {
-                    if((int)control.Tag == delAnnouncement.Id)
-                    {
-                        announcementsFLPanel.Controls.Remove(control);
 
-                        // Reset panel with new set of recent announcements
-                        announcementsFLPanel.Controls.Clear();
-                        foreach (var announcement in Announcements.Take(3))
+                    // Delete announcement from db
+                    _context.Announcements.Remove(delAnnouncement);
+                    await _context.SaveChangesAsync();
+
+                    // Update ListBox 
+                    Announcements.Remove(delAnnouncement);
+
+                    // Update flowLayoutPanel
+                    foreach (CardControl control in announcementsFLPanel.Controls)
+                    {
+                        if ((int)control.Tag == delAnnouncement.Id)
                         {
-                            CardControl cardControl = new CardControl(announcement);
-                            announcementsFLPanel.Controls.Add(cardControl);
+                            announcementsFLPanel.Controls.Remove(control);
+
+                            // Reset panel with new set of recent announcements
+                            announcementsFLPanel.Controls.Clear();
+                            foreach (var announcement in Announcements.Take(3))
+                            {
+                                CardControl cardControl = new CardControl(announcement);
+                                announcementsFLPanel.Controls.Add(cardControl);
+                            }
                         }
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("No announcement that can be deleted.", "Error occured");
             }
         }
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            CreateOrUpdateAnnouncementForm announcementForm = new CreateOrUpdateAnnouncementForm(this, (Announcement)announcementsListBox.SelectedItem);
-            announcementForm.Show();
+            Announcement announce = (Announcement)announcementsListBox.SelectedItem;
+            if (announce != null)
+            {
+                CreateOrUpdateAnnouncementForm announcementForm = new CreateOrUpdateAnnouncementForm(this, announce);
+                announcementForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("No announce for edit.", "Error occured");
+            }
+        }
+
+        private void ShowBtn_Click(object sender, EventArgs e)
+        {
+            Announcement announce = (Announcement)announcementsListBox.SelectedItem;
+            if (announce != null)
+            {
+                ShowAnnouncementForm announcementShow = new ShowAnnouncementForm(announce);
+                announcementShow.Show();
+            }
+            else
+            {
+                MessageBox.Show("No announce to show", "Error occured");
+            }
         }
     }
 }
