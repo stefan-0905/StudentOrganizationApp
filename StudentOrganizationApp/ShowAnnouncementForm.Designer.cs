@@ -37,7 +37,7 @@
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.Size = new System.Drawing.Size(532, 263);
             this.descriptionLabel.TabIndex = 0;
-            this.descriptionLabel.Text = "label1";
+            this.descriptionLabel.Text = "Announcement description";
             // 
             // ShowAnnouncementForm
             // 

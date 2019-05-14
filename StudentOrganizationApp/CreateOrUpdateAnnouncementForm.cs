@@ -1,5 +1,5 @@
 ﻿using StudentOrganizationControlLibrary;
-using StudentOrganizationLibrary;
+using StudentOrganizationLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -144,9 +144,8 @@ namespace StudentOrganizationApp
                             ToolTip myToolTip = new ToolTip();
                             myToolTip.SetToolTip(control.headerLabel, editAnnounce.Title);
 
-                            control.headerLabel.Text = control.SubStringShortener(editAnnounce.Title, control.headerLabel.Font, 126, 25);
-                            
-                            control.descriptionLabel.Text = control.SubStringShortener(editAnnounce.Description, descriptionLabel.Font, 294, 50);
+                            control.headerLabel.Text = editAnnounce.Title;
+                            control.descriptionLabel.Text = editAnnounce.Description;
                         }
                     }
 

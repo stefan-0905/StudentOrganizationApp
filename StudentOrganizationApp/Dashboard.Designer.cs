@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.forumButton = new System.Windows.Forms.Button();
-            this.messagesButton = new System.Windows.Forms.Button();
-            this.coursesButton = new System.Windows.Forms.Button();
+            this.navigationPanel = new System.Windows.Forms.Panel();
+            this.exitBtn = new System.Windows.Forms.Button();
+            this.settingsBtn = new System.Windows.Forms.Button();
+            this.membersButton = new System.Windows.Forms.Button();
             this.announcementsButton = new System.Windows.Forms.Button();
             this.dashboardButton = new System.Windows.Forms.Button();
             this.dashboardPanel = new System.Windows.Forms.Panel();
@@ -41,6 +41,7 @@
             this.dashboardHeadingPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.announcementsPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.createBtn = new System.Windows.Forms.Button();
             this.announcementsContentPanel = new System.Windows.Forms.Panel();
             this.announcementsListBox = new System.Windows.Forms.ListBox();
@@ -49,77 +50,107 @@
             this.showBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.announcementsManagerHeaderLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.membersPanel = new System.Windows.Forms.Panel();
+            this.membersHeadingPanel = new System.Windows.Forms.Panel();
+            this.memberHeaderLabel = new System.Windows.Forms.Label();
+            this.membersContentPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.settingsPanel = new System.Windows.Forms.Panel();
+            this.settingsHeadingPanel = new System.Windows.Forms.Panel();
+            this.settingsHeadinglabel = new System.Windows.Forms.Label();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.departmentsListBox = new System.Windows.Forms.ListBox();
+            this.createDepartmentBtn = new System.Windows.Forms.Button();
+            this.newDepartmentValue = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.rolesListBox = new System.Windows.Forms.ListBox();
+            this.createRoleBtn = new System.Windows.Forms.Button();
+            this.newRoleValue = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.deleteRoleBtn = new System.Windows.Forms.Button();
+            this.deleteDepartmentBtn = new System.Windows.Forms.Button();
+            this.navigationPanel.SuspendLayout();
             this.dashboardPanel.SuspendLayout();
             this.dashboardContentPanel.SuspendLayout();
             this.dashboardHeadingPanel.SuspendLayout();
             this.announcementsPanel.SuspendLayout();
             this.announcementsContentPanel.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.membersPanel.SuspendLayout();
+            this.membersHeadingPanel.SuspendLayout();
+            this.membersContentPanel.SuspendLayout();
+            this.settingsPanel.SuspendLayout();
+            this.settingsHeadingPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // navigationPanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.Gold;
-            this.panel1.Controls.Add(this.forumButton);
-            this.panel1.Controls.Add(this.messagesButton);
-            this.panel1.Controls.Add(this.coursesButton);
-            this.panel1.Controls.Add(this.announcementsButton);
-            this.panel1.Controls.Add(this.dashboardButton);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 540);
-            this.panel1.TabIndex = 0;
+            this.navigationPanel.BackColor = System.Drawing.Color.Gold;
+            this.navigationPanel.Controls.Add(this.exitBtn);
+            this.navigationPanel.Controls.Add(this.settingsBtn);
+            this.navigationPanel.Controls.Add(this.membersButton);
+            this.navigationPanel.Controls.Add(this.announcementsButton);
+            this.navigationPanel.Controls.Add(this.dashboardButton);
+            this.navigationPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.navigationPanel.Location = new System.Drawing.Point(0, 0);
+            this.navigationPanel.Name = "navigationPanel";
+            this.navigationPanel.Size = new System.Drawing.Size(200, 540);
+            this.navigationPanel.TabIndex = 0;
             // 
-            // forumButton
+            // exitBtn
             // 
-            this.forumButton.FlatAppearance.BorderSize = 0;
-            this.forumButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(106)))), ((int)(((byte)(134)))));
-            this.forumButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.forumButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.forumButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(100)))), ((int)(((byte)(183)))));
-            this.forumButton.Location = new System.Drawing.Point(0, 326);
-            this.forumButton.Name = "forumButton";
-            this.forumButton.Size = new System.Drawing.Size(200, 49);
-            this.forumButton.TabIndex = 4;
-            this.forumButton.Text = "Forum";
-            this.forumButton.UseVisualStyleBackColor = true;
-            this.forumButton.MouseEnter += new System.EventHandler(this.NavigationButton_MouseEnter);
-            this.forumButton.MouseLeave += new System.EventHandler(this.NavigationButton_MouseLeave);
+            this.exitBtn.FlatAppearance.BorderSize = 0;
+            this.exitBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(106)))), ((int)(((byte)(134)))));
+            this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(100)))), ((int)(((byte)(183)))));
+            this.exitBtn.Location = new System.Drawing.Point(0, 326);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(200, 49);
+            this.exitBtn.TabIndex = 4;
+            this.exitBtn.Text = "Exit";
+            this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
+            this.exitBtn.MouseEnter += new System.EventHandler(this.NavigationButton_MouseEnter);
+            this.exitBtn.MouseLeave += new System.EventHandler(this.NavigationButton_MouseLeave);
             // 
-            // messagesButton
+            // settingsBtn
             // 
-            this.messagesButton.FlatAppearance.BorderSize = 0;
-            this.messagesButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(106)))), ((int)(((byte)(134)))));
-            this.messagesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.messagesButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.messagesButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(100)))), ((int)(((byte)(183)))));
-            this.messagesButton.Location = new System.Drawing.Point(0, 277);
-            this.messagesButton.Name = "messagesButton";
-            this.messagesButton.Size = new System.Drawing.Size(200, 49);
-            this.messagesButton.TabIndex = 3;
-            this.messagesButton.Text = "Messages";
-            this.messagesButton.UseVisualStyleBackColor = true;
-            this.messagesButton.MouseEnter += new System.EventHandler(this.NavigationButton_MouseEnter);
-            this.messagesButton.MouseLeave += new System.EventHandler(this.NavigationButton_MouseLeave);
+            this.settingsBtn.FlatAppearance.BorderSize = 0;
+            this.settingsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(106)))), ((int)(((byte)(134)))));
+            this.settingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settingsBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.settingsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(100)))), ((int)(((byte)(183)))));
+            this.settingsBtn.Location = new System.Drawing.Point(0, 277);
+            this.settingsBtn.Name = "settingsBtn";
+            this.settingsBtn.Size = new System.Drawing.Size(200, 49);
+            this.settingsBtn.TabIndex = 3;
+            this.settingsBtn.Text = "Settings";
+            this.settingsBtn.UseVisualStyleBackColor = true;
+            this.settingsBtn.Click += new System.EventHandler(this.SettingsBtn_Click);
+            this.settingsBtn.MouseEnter += new System.EventHandler(this.NavigationButton_MouseEnter);
+            this.settingsBtn.MouseLeave += new System.EventHandler(this.NavigationButton_MouseLeave);
             // 
-            // coursesButton
+            // membersButton
             // 
-            this.coursesButton.FlatAppearance.BorderSize = 0;
-            this.coursesButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(106)))), ((int)(((byte)(134)))));
-            this.coursesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.coursesButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.coursesButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(100)))), ((int)(((byte)(183)))));
-            this.coursesButton.Location = new System.Drawing.Point(0, 228);
-            this.coursesButton.Name = "coursesButton";
-            this.coursesButton.Size = new System.Drawing.Size(200, 49);
-            this.coursesButton.TabIndex = 2;
-            this.coursesButton.Text = "Courses";
-            this.coursesButton.UseVisualStyleBackColor = true;
-            this.coursesButton.MouseEnter += new System.EventHandler(this.NavigationButton_MouseEnter);
-            this.coursesButton.MouseLeave += new System.EventHandler(this.NavigationButton_MouseLeave);
+            this.membersButton.FlatAppearance.BorderSize = 0;
+            this.membersButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(106)))), ((int)(((byte)(134)))));
+            this.membersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.membersButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.membersButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(100)))), ((int)(((byte)(183)))));
+            this.membersButton.Location = new System.Drawing.Point(0, 228);
+            this.membersButton.Name = "membersButton";
+            this.membersButton.Size = new System.Drawing.Size(200, 49);
+            this.membersButton.TabIndex = 2;
+            this.membersButton.Text = "Members";
+            this.membersButton.UseVisualStyleBackColor = true;
+            this.membersButton.Click += new System.EventHandler(this.MembersButton_Click);
+            this.membersButton.MouseEnter += new System.EventHandler(this.NavigationButton_MouseEnter);
+            this.membersButton.MouseLeave += new System.EventHandler(this.NavigationButton_MouseLeave);
             // 
             // announcementsButton
             // 
@@ -233,8 +264,20 @@
             this.announcementsPanel.Size = new System.Drawing.Size(644, 540);
             this.announcementsPanel.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(14, 76);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 21);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "History:";
+            // 
             // createBtn
             // 
+            this.createBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.createBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(106)))), ((int)(((byte)(134)))));
             this.createBtn.FlatAppearance.BorderSize = 0;
             this.createBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -340,16 +383,227 @@
             this.announcementsManagerHeaderLabel.TabIndex = 0;
             this.announcementsManagerHeaderLabel.Text = "Announcements Manager";
             // 
-            // label1
+            // membersPanel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(14, 76);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 21);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "History:";
+            this.membersPanel.Controls.Add(this.membersContentPanel);
+            this.membersPanel.Controls.Add(this.membersHeadingPanel);
+            this.membersPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.membersPanel.Location = new System.Drawing.Point(200, 0);
+            this.membersPanel.Name = "membersPanel";
+            this.membersPanel.Size = new System.Drawing.Size(644, 540);
+            this.membersPanel.TabIndex = 5;
+            // 
+            // membersHeadingPanel
+            // 
+            this.membersHeadingPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(100)))), ((int)(((byte)(183)))));
+            this.membersHeadingPanel.Controls.Add(this.memberHeaderLabel);
+            this.membersHeadingPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.membersHeadingPanel.Location = new System.Drawing.Point(0, 0);
+            this.membersHeadingPanel.Name = "membersHeadingPanel";
+            this.membersHeadingPanel.Size = new System.Drawing.Size(644, 53);
+            this.membersHeadingPanel.TabIndex = 3;
+            // 
+            // memberHeaderLabel
+            // 
+            this.memberHeaderLabel.AutoSize = true;
+            this.memberHeaderLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memberHeaderLabel.ForeColor = System.Drawing.Color.White;
+            this.memberHeaderLabel.Location = new System.Drawing.Point(14, 14);
+            this.memberHeaderLabel.Name = "memberHeaderLabel";
+            this.memberHeaderLabel.Size = new System.Drawing.Size(180, 21);
+            this.memberHeaderLabel.TabIndex = 0;
+            this.memberHeaderLabel.Text = "Member Management";
+            // 
+            // membersContentPanel
+            // 
+            this.membersContentPanel.Controls.Add(this.panel1);
+            this.membersContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.membersContentPanel.Location = new System.Drawing.Point(0, 53);
+            this.membersContentPanel.Name = "membersContentPanel";
+            this.membersContentPanel.Size = new System.Drawing.Size(644, 487);
+            this.membersContentPanel.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(644, 487);
+            this.panel1.TabIndex = 6;
+            // 
+            // settingsPanel
+            // 
+            this.settingsPanel.Controls.Add(this.splitContainer1);
+            this.settingsPanel.Controls.Add(this.settingsHeadingPanel);
+            this.settingsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.settingsPanel.Location = new System.Drawing.Point(200, 0);
+            this.settingsPanel.Name = "settingsPanel";
+            this.settingsPanel.Size = new System.Drawing.Size(644, 540);
+            this.settingsPanel.TabIndex = 4;
+            // 
+            // settingsHeadingPanel
+            // 
+            this.settingsHeadingPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(100)))), ((int)(((byte)(183)))));
+            this.settingsHeadingPanel.Controls.Add(this.settingsHeadinglabel);
+            this.settingsHeadingPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.settingsHeadingPanel.Location = new System.Drawing.Point(0, 0);
+            this.settingsHeadingPanel.Name = "settingsHeadingPanel";
+            this.settingsHeadingPanel.Size = new System.Drawing.Size(644, 53);
+            this.settingsHeadingPanel.TabIndex = 4;
+            // 
+            // settingsHeadinglabel
+            // 
+            this.settingsHeadinglabel.AutoSize = true;
+            this.settingsHeadinglabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.settingsHeadinglabel.ForeColor = System.Drawing.Color.White;
+            this.settingsHeadinglabel.Location = new System.Drawing.Point(14, 14);
+            this.settingsHeadinglabel.Name = "settingsHeadinglabel";
+            this.settingsHeadinglabel.Size = new System.Drawing.Size(72, 21);
+            this.settingsHeadinglabel.TabIndex = 0;
+            this.settingsHeadinglabel.Text = "Settings";
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 53);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.deleteRoleBtn);
+            this.splitContainer1.Panel1.Controls.Add(this.newRoleValue);
+            this.splitContainer1.Panel1.Controls.Add(this.rolesListBox);
+            this.splitContainer1.Panel1.Controls.Add(this.createRoleBtn);
+            this.splitContainer1.Panel1.Controls.Add(this.label3);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.deleteDepartmentBtn);
+            this.splitContainer1.Panel2.Controls.Add(this.departmentsListBox);
+            this.splitContainer1.Panel2.Controls.Add(this.label4);
+            this.splitContainer1.Panel2.Controls.Add(this.createDepartmentBtn);
+            this.splitContainer1.Panel2.Controls.Add(this.newDepartmentValue);
+            this.splitContainer1.Size = new System.Drawing.Size(644, 487);
+            this.splitContainer1.SplitterDistance = 315;
+            this.splitContainer1.TabIndex = 5;
+            // 
+            // departmentsListBox
+            // 
+            this.departmentsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.departmentsListBox.FormattingEnabled = true;
+            this.departmentsListBox.ItemHeight = 21;
+            this.departmentsListBox.Location = new System.Drawing.Point(50, 143);
+            this.departmentsListBox.Name = "departmentsListBox";
+            this.departmentsListBox.Size = new System.Drawing.Size(220, 193);
+            this.departmentsListBox.TabIndex = 20;
+            // 
+            // createDepartmentBtn
+            // 
+            this.createDepartmentBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(106)))), ((int)(((byte)(134)))));
+            this.createDepartmentBtn.FlatAppearance.BorderSize = 0;
+            this.createDepartmentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createDepartmentBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createDepartmentBtn.ForeColor = System.Drawing.Color.White;
+            this.createDepartmentBtn.Location = new System.Drawing.Point(50, 97);
+            this.createDepartmentBtn.Name = "createDepartmentBtn";
+            this.createDepartmentBtn.Size = new System.Drawing.Size(75, 23);
+            this.createDepartmentBtn.TabIndex = 19;
+            this.createDepartmentBtn.Text = "Create";
+            this.createDepartmentBtn.UseVisualStyleBackColor = false;
+            this.createDepartmentBtn.Click += new System.EventHandler(this.CreateDepartmentBtn_Click);
+            // 
+            // newDepartmentValue
+            // 
+            this.newDepartmentValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.newDepartmentValue.Location = new System.Drawing.Point(50, 61);
+            this.newDepartmentValue.Name = "newDepartmentValue";
+            this.newDepartmentValue.Size = new System.Drawing.Size(220, 29);
+            this.newDepartmentValue.TabIndex = 18;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(46, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(128, 21);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Add Department:";
+            // 
+            // rolesListBox
+            // 
+            this.rolesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rolesListBox.FormattingEnabled = true;
+            this.rolesListBox.ItemHeight = 21;
+            this.rolesListBox.Location = new System.Drawing.Point(45, 143);
+            this.rolesListBox.Name = "rolesListBox";
+            this.rolesListBox.Size = new System.Drawing.Size(220, 193);
+            this.rolesListBox.TabIndex = 16;
+            // 
+            // createRoleBtn
+            // 
+            this.createRoleBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(106)))), ((int)(((byte)(134)))));
+            this.createRoleBtn.FlatAppearance.BorderSize = 0;
+            this.createRoleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createRoleBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createRoleBtn.ForeColor = System.Drawing.Color.White;
+            this.createRoleBtn.Location = new System.Drawing.Point(45, 97);
+            this.createRoleBtn.Name = "createRoleBtn";
+            this.createRoleBtn.Size = new System.Drawing.Size(71, 23);
+            this.createRoleBtn.TabIndex = 15;
+            this.createRoleBtn.Text = "Create";
+            this.createRoleBtn.UseVisualStyleBackColor = false;
+            this.createRoleBtn.Click += new System.EventHandler(this.CreateRoleBtn_Click);
+            // 
+            // newRoleValue
+            // 
+            this.newRoleValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.newRoleValue.Location = new System.Drawing.Point(45, 61);
+            this.newRoleValue.Name = "newRoleValue";
+            this.newRoleValue.Size = new System.Drawing.Size(220, 29);
+            this.newRoleValue.TabIndex = 14;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(41, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 21);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Add Role:";
+            // 
+            // deleteRoleBtn
+            // 
+            this.deleteRoleBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.deleteRoleBtn.FlatAppearance.BorderSize = 0;
+            this.deleteRoleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteRoleBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteRoleBtn.ForeColor = System.Drawing.Color.White;
+            this.deleteRoleBtn.Location = new System.Drawing.Point(45, 352);
+            this.deleteRoleBtn.Name = "deleteRoleBtn";
+            this.deleteRoleBtn.Size = new System.Drawing.Size(94, 24);
+            this.deleteRoleBtn.TabIndex = 17;
+            this.deleteRoleBtn.Text = "Delete";
+            this.deleteRoleBtn.UseVisualStyleBackColor = false;
+            this.deleteRoleBtn.Click += new System.EventHandler(this.DeleteRoleBtn_Click);
+            // 
+            // deleteDepartmentBtn
+            // 
+            this.deleteDepartmentBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.deleteDepartmentBtn.FlatAppearance.BorderSize = 0;
+            this.deleteDepartmentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteDepartmentBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteDepartmentBtn.ForeColor = System.Drawing.Color.White;
+            this.deleteDepartmentBtn.Location = new System.Drawing.Point(50, 352);
+            this.deleteDepartmentBtn.Name = "deleteDepartmentBtn";
+            this.deleteDepartmentBtn.Size = new System.Drawing.Size(94, 24);
+            this.deleteDepartmentBtn.TabIndex = 18;
+            this.deleteDepartmentBtn.Text = "Delete";
+            this.deleteDepartmentBtn.UseVisualStyleBackColor = false;
+            this.deleteDepartmentBtn.Click += new System.EventHandler(this.DeleteDepartmentBtn_Click);
             // 
             // Dashboard
             // 
@@ -357,15 +611,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 540);
             this.Controls.Add(this.announcementsPanel);
+            this.Controls.Add(this.settingsPanel);
+            this.Controls.Add(this.membersPanel);
             this.Controls.Add(this.dashboardPanel);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.navigationPanel);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Organization - Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
-            this.panel1.ResumeLayout(false);
+            this.navigationPanel.ResumeLayout(false);
             this.dashboardPanel.ResumeLayout(false);
             this.dashboardContentPanel.ResumeLayout(false);
             this.dashboardContentPanel.PerformLayout();
@@ -376,17 +633,30 @@
             this.announcementsContentPanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.membersPanel.ResumeLayout(false);
+            this.membersHeadingPanel.ResumeLayout(false);
+            this.membersHeadingPanel.PerformLayout();
+            this.membersContentPanel.ResumeLayout(false);
+            this.settingsPanel.ResumeLayout(false);
+            this.settingsHeadingPanel.ResumeLayout(false);
+            this.settingsHeadingPanel.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel navigationPanel;
         private System.Windows.Forms.Button dashboardButton;
-        private System.Windows.Forms.Button forumButton;
-        private System.Windows.Forms.Button messagesButton;
-        private System.Windows.Forms.Button coursesButton;
+        private System.Windows.Forms.Button exitBtn;
+        private System.Windows.Forms.Button settingsBtn;
+        private System.Windows.Forms.Button membersButton;
         private System.Windows.Forms.Button announcementsButton;
         private System.Windows.Forms.Panel dashboardPanel;
         private System.Windows.Forms.Panel announcementsPanel;
@@ -404,5 +674,24 @@
         private System.Windows.Forms.Button showBtn;
         private System.Windows.Forms.ListBox announcementsListBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel membersPanel;
+        private System.Windows.Forms.Panel membersContentPanel;
+        private System.Windows.Forms.Panel membersHeadingPanel;
+        private System.Windows.Forms.Label memberHeaderLabel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel settingsPanel;
+        private System.Windows.Forms.Panel settingsHeadingPanel;
+        private System.Windows.Forms.Label settingsHeadinglabel;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.TextBox newRoleValue;
+        private System.Windows.Forms.ListBox rolesListBox;
+        private System.Windows.Forms.Button createRoleBtn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox departmentsListBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button createDepartmentBtn;
+        private System.Windows.Forms.TextBox newDepartmentValue;
+        private System.Windows.Forms.Button deleteRoleBtn;
+        private System.Windows.Forms.Button deleteDepartmentBtn;
     }
 }

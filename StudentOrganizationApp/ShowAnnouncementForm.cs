@@ -1,4 +1,4 @@
-﻿using StudentOrganizationLibrary;
+﻿using StudentOrganizationLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

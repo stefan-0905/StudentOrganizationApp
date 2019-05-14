@@ -59,21 +59,21 @@
             // 
             // headerLabel
             // 
-            this.headerLabel.AutoSize = true;
+            this.headerLabel.AutoEllipsis = true;
             this.headerLabel.ForeColor = System.Drawing.Color.White;
             this.headerLabel.Location = new System.Drawing.Point(3, 2);
             this.headerLabel.Margin = new System.Windows.Forms.Padding(0);
             this.headerLabel.Name = "headerLabel";
-            this.headerLabel.Size = new System.Drawing.Size(122, 13);
+            this.headerLabel.Size = new System.Drawing.Size(207, 16);
             this.headerLabel.TabIndex = 1;
             this.headerLabel.Text = "Announcement Heading";
             // 
             // descriptionLabel
             // 
-            this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.AutoEllipsis = true;
             this.descriptionLabel.Location = new System.Drawing.Point(2, 20);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(174, 13);
+            this.descriptionLabel.Size = new System.Drawing.Size(294, 16);
             this.descriptionLabel.TabIndex = 1;
             this.descriptionLabel.Text = "Some desctiption of announcement";
             // 
@@ -88,9 +88,7 @@
             this.Name = "CardControl";
             this.Size = new System.Drawing.Size(300, 36);
             this.Card.ResumeLayout(false);
-            this.Card.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

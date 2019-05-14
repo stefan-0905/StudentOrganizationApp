@@ -50,6 +50,9 @@
             // 
             // titleValue
             // 
+            this.titleValue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.titleValue.Location = new System.Drawing.Point(16, 35);
             this.titleValue.Name = "titleValue";
             this.titleValue.Size = new System.Drawing.Size(463, 29);
@@ -57,15 +60,17 @@
             // 
             // descriptionLabel
             // 
-            this.descriptionLabel.AutoSize = true;
             this.descriptionLabel.Location = new System.Drawing.Point(13, 69);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(92, 21);
+            this.descriptionLabel.Size = new System.Drawing.Size(147, 21);
             this.descriptionLabel.TabIndex = 2;
             this.descriptionLabel.Text = "Description:";
             // 
             // descriptionValue
             // 
+            this.descriptionValue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.descriptionValue.Location = new System.Drawing.Point(16, 94);
             this.descriptionValue.Name = "descriptionValue";
             this.descriptionValue.Size = new System.Drawing.Size(463, 251);
@@ -74,13 +79,15 @@
             // 
             // createBtn
             // 
+            this.createBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.createBtn.AutoSize = true;
             this.createBtn.BackColor = System.Drawing.Color.MediumBlue;
             this.createBtn.FlatAppearance.BorderSize = 0;
             this.createBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createBtn.ForeColor = System.Drawing.Color.White;
             this.createBtn.Location = new System.Drawing.Point(133, 365);
             this.createBtn.Name = "createBtn";
-            this.createBtn.Size = new System.Drawing.Size(94, 30);
+            this.createBtn.Size = new System.Drawing.Size(94, 31);
             this.createBtn.TabIndex = 4;
             this.createBtn.Text = "Create";
             this.createBtn.UseVisualStyleBackColor = false;
@@ -88,13 +95,15 @@
             // 
             // cancelBtn
             // 
+            this.cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelBtn.AutoSize = true;
             this.cancelBtn.BackColor = System.Drawing.Color.DimGray;
             this.cancelBtn.FlatAppearance.BorderSize = 0;
             this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelBtn.ForeColor = System.Drawing.Color.White;
             this.cancelBtn.Location = new System.Drawing.Point(263, 365);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(94, 30);
+            this.cancelBtn.Size = new System.Drawing.Size(94, 31);
             this.cancelBtn.TabIndex = 5;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = false;
@@ -121,13 +130,15 @@
             // 
             // updateBtn
             // 
+            this.updateBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.updateBtn.AutoSize = true;
             this.updateBtn.BackColor = System.Drawing.Color.MediumBlue;
             this.updateBtn.FlatAppearance.BorderSize = 0;
             this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateBtn.ForeColor = System.Drawing.Color.White;
             this.updateBtn.Location = new System.Drawing.Point(133, 365);
             this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(94, 30);
+            this.updateBtn.Size = new System.Drawing.Size(94, 31);
             this.updateBtn.TabIndex = 8;
             this.updateBtn.Text = "Update";
             this.updateBtn.UseVisualStyleBackColor = false;
@@ -149,6 +160,7 @@
             this.Controls.Add(this.updateBtn);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(507, 459);
             this.Name = "CreateOrUpdateAnnouncementForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create New Announcement";

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudentOrganizationLibrary
+namespace StudentOrganizationLibrary.Models
 {
     public class Announcement
     {

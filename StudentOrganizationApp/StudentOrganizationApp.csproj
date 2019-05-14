@@ -73,6 +73,14 @@
     <Compile Include="Migrations\201905131733478_AddedCreatedAtColumnToAnnouncements.Designer.cs">
       <DependentUpon>201905131733478_AddedCreatedAtColumnToAnnouncements.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905141148347_CreateMembersTable.cs" />
+    <Compile Include="Migrations\201905141148347_CreateMembersTable.Designer.cs">
+      <DependentUpon>201905141148347_CreateMembersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905141206590_CreateRolesTable.cs" />
+    <Compile Include="Migrations\201905141206590_CreateRolesTable.Designer.cs">
+      <DependentUpon>201905141206590_CreateRolesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,6 +102,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905131733478_AddedCreatedAtColumnToAnnouncements.resx">
       <DependentUpon>201905131733478_AddedCreatedAtColumnToAnnouncements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905141148347_CreateMembersTable.resx">
+      <DependentUpon>201905141148347_CreateMembersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905141206590_CreateRolesTable.resx">
+      <DependentUpon>201905141206590_CreateRolesTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
